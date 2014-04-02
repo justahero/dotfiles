@@ -1,5 +1,6 @@
 [core]
 	editor = subl --wait
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all

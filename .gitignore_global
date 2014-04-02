@@ -1,0 +1,7 @@
+.DS_store
+*.sublime-project
+*.sublime-workspace
+
+*.classpath
+*.project
+*.settings/
