@@ -5,8 +5,6 @@ colorscheme molokai
 set clipboard=unnamed
 " Allow cursor keys in insert mode
 set esckeys
-" Optimize for fast terminal connections
-set ttyfas
 
 
 " ====== General Options ======
@@ -28,8 +26,8 @@ set autoindent
 set smartindent
 set smarttab
 set shiftwidth=2
-set softtabstops=2
-set tabstops=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 filetype plugin on
