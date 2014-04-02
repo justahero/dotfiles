@@ -1,0 +1,31 @@
+{
+  "auto_indent": true,
+  "caret_style": "phase",
+  "color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+  "default_line_ending": "unix",
+  "detect_indentation": false,
+  "drag_text": false,
+  "draw_white_space": "all",
+  "font_size": 14,
+  "gutter": true,
+  "highlight_line": true,
+  "highlight_modified_tabs": false,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "indent_subsequent_lines": true,
+  "indent_to_bracket": false,
+  "margin": 2,
+  "scroll_speed": 1.0,
+  "show_tab_close_buttons": false,
+  "smart_indent": true,
+  "tab_size": 2,
+  "theme": "Soda Dark 3.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_automatic_white_space": true,
+  "trim_trailing_white_space_on_save": false,
+  "use_tab_stops": false,
+  "word_wrap": "auto",
+  "wrap_width": 0
+}
