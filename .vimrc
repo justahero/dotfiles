@@ -6,32 +6,44 @@ set clipboard=unnamed
 " Allow cursor keys in insert mode
 set esckeys
 
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
 " ====== General Options ======
 
 syntax enable
 set nocompatible       " Make Vim more useful
+set history=1000
+set t_Co=256           " Tell Vim to use 256 colors
 
 set number             " Show line numbers
 set relativenumber     " Show relative line numbers
+set cursorline         " Highlight cursor line
 set showcmd            " Show incomplete commands in status bar
 set showmode           " Show current mode in status bar
 set visualbell         " No sounds
 set autoread           " Reload files modified outside vim
+set laststatus=2       " Always show status line
+set showmatch          " Show matching brackets
+set matchtime=2        " Highlight matching brackets 0.2 seconds
+set matchpairs+=<:>    " Especially for HTML tags
 
+set ruler
 
 " ====== Indentation ======
 
+filetype plugin on
+filetype indent on
+
 set autoindent
 set smartindent
-set smarttab
+" set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-
-filetype plugin on
-filetype indent on
 
 
 " ====== Folding ======
