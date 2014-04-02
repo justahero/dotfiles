@@ -13,9 +13,9 @@
 	dc = diff --cached --color
 	du = diff --color
 	co = checkout
-	me = !git config user.name
+	me = $GIT_AUTHOR_NAME
 	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
-	lg-me = !git lg --author=\"`git me`\"
+	lg-me = !git lg --author=\"$GIT_AUTHOR_NAME\"
 	today-all = !git lg --all --since='12am'
 	today = !git lg-me --all --since='12am'
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
