@@ -1,3 +1,5 @@
+set nocompatible       " Make Vim more useful
+
 " Use the Molokai theme (originally created for TextMate by Wimer Hazenberg)
 colorscheme molokai
 
@@ -14,7 +16,6 @@ set hidden
 " ====== General Options ======
 
 syntax enable
-set nocompatible       " Make Vim more useful
 set history=1000
 set t_Co=256           " Tell Vim to use 256 colors
 
@@ -79,3 +80,23 @@ set nowb
 
 " Allow backspace in insert mode
 set backspace=indent,eol,start
+
+
+" ====== Plugins handled by vundle ======
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+" Ctrl-P fuzzy file search plugin
+Plugin 'kien/ctrlp.vim'
+
+" Coffeescript syntax highlighting
+Plugin 'kchmck/vim-coffee-script'
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
