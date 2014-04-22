@@ -19,5 +19,6 @@
 	today-all = !git lg --all --since='12am'
 	today = !git lg-me --all --since='12am'
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
+	undo = !git reset --hard && git clean -df
 [color]
 	ui = true
