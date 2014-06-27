@@ -10,10 +10,10 @@ function prompt_char {
 }
 
 function prompt_rvm {
-    rbv=`rvm-prompt`
-    rbv=${rbv#ruby-}
-    [[ $rbv == *"@"* ]] || rbv="${rbv}@default"
-    echo $rbv
+  rbv=`rvm-prompt`
+  rbv=${rbv#ruby-}
+  [[ $rbv == *"@"* ]] || rbv="${rbv}@default"
+  echo $rbv
 }
 
 function git_repo_path {
