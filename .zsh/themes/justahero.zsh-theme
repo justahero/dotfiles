@@ -16,19 +16,37 @@ function prompt_rvm {
     echo $rbv
 }
 
-git_mode() {
+function git_repo_path {
+  git rev-parse --git-dir 2>/dev/null
+}
+
+function join {
+  local IFS="$1"; shift; echo "$*";
+}
+
+function git_mode {
+  local repo_path=$(git_repo_path)
+  declare -a STATUS
   if [[ -e "$repo_path/BISECT_LOG" ]]; then
-    echo "(bisect)"
-  elif [[ -e "$repo_path/MERGE_HEAD" ]]; then
-    echo "(merge)"
-  elif [[ -e "$repo_path/rebase" || -e "$repo_path/rebase-apply" || -e "$repo_path/rebase-merge" || -e "$repo_path/../.dotest" ]]; then
-    echo "(rebase)"
+    STATUS+=("bisect")
+  fi
+  if [[ -e "$repo_path/MERGE_HEAD" ]]; then
+    STATUS+=("merge")
+  fi
+  if [[ -e "$repo_path/rebase" || -e "$repo_path/rebase-apply" || -e "$repo_path/rebase-merge" || -e "$repo_path/../.dotest" ]]; then
+    STATUS+=("rebase")
+  fi
+
+  if [ ${#STATUS[@]} -ne 0 ]; then
+    RESULT=$(IFS=$'|'; echo "$STATUS[*]")
+    echo "(${RESULT})"
   fi
 }
 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[green]%}$(git_mode)%{$reset_color%}
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) %{$fg[yellow]%}$(git_mode)%{$reset_color%}
 %_ $(prompt_char) '
 
-RPROMPT='[%{$fg[yellow]%}$(prompt_rvm)%{$reset_color%} %{$fg[green]%}%*%{$reset_color%}]'
+# RPROMPT='[%{$fg[yellow]%}$(prompt_rvm)%{$reset_color%} %{$fg[green]%}%*%{$reset_color%}]'
+RPROMPT='[%{$fg[green]%}%*%{$reset_color%}]'
