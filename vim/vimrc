@@ -1,7 +1,8 @@
 set nocompatible       " Make Vim more useful
 
 " Use the Molokai theme (originally created for TextMate by Wimer Hazenberg)
-colorscheme molokai
+" colorscheme molokai
+colorscheme solarized
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -17,10 +18,10 @@ set hidden
 
 syntax enable
 set history=1000
-set t_Co=256           " Tell Vim to use 256 colors
+" set t_Co=256           " Tell Vim to use 256 colors
 
 set number             " Show line numbers
-set relativenumber     " Show relative line numbers
+" set relativenumber     " Show relative line numbers
 set cursorline         " Highlight cursor line
 set showcmd            " Show incomplete commands in status bar
 set showmode           " Show current mode in status bar
