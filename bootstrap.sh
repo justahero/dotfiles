@@ -20,6 +20,8 @@ unset doIt
 # vim
 ln -sf `pwd`/vim/vimrc ~/.vimrc
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# macvim
+ln -sf `pwd`/vim/gvimrc ~/.gvimrc
 
 # tmux
 ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf

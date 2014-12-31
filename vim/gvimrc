@@ -1,0 +1,5 @@
+colorscheme molokai
+
+" Font Manager to list / switch fonts
+Plugin 'takac/vim-fontmanager'
+
