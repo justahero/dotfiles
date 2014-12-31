@@ -1,8 +1,12 @@
 set nocompatible       " Make Vim more useful
+set t_Co=256
 
-" Use the Molokai theme (originally created for TextMate by Wimer Hazenberg)
-" colorscheme molokai
+syntax on
+let g:solarized_termtrans = 1
+let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
+
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -16,9 +20,7 @@ set hidden
 
 " ====== General Options ======
 
-syntax enable
 set history=1000
-" set t_Co=256           " Tell Vim to use 256 colors
 
 set number             " Show line numbers
 " set relativenumber     " Show relative line numbers
@@ -34,10 +36,13 @@ set matchpairs+=<:>    " Especially for HTML tags
 
 set ruler
 
-" ====== Indentation ======
+" ====== File specific options ======
 
+filetype on
 filetype plugin on
 filetype indent on
+
+" ====== Indentation ======
 
 set autoindent
 set smartindent
@@ -90,13 +95,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+" Plugin 'gmarik/vundle'
 
 " Ctrl-P fuzzy file search plugin
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 
 " Coffeescript syntax highlighting
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
