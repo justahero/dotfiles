@@ -2,6 +2,7 @@ set nocompatible       " Make Vim more useful
 set t_Co=256
 
 syntax on
+set guifont=Monaco:h14
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -97,6 +98,12 @@ Plugin 'kien/ctrlp.vim'
 
 " Coffeescript syntax highlighting
 Plugin 'kchmck/vim-coffee-script'
+
+" Install common Ruby Support
+Plugin 'vim-ruby/vim-ruby'
+
+" C / C++ related plugins
+Plugin 'vim-scripts/a.vim'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
