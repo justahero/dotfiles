@@ -2,11 +2,6 @@ set nocompatible       " Make Vim more useful
 set t_Co=256
 
 syntax on
-let g:solarized_termtrans = 1
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
-
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -62,7 +57,7 @@ set nofoldenable         " Folding is deactivated by default
 
 " ====== Scrolling ======
 
-set scrolloff=8          " Start scrolling 8 lines from margin
+set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
 
@@ -95,13 +90,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle, required
-" Plugin 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Ctrl-P fuzzy file search plugin
-" Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Coffeescript syntax highlighting
-" Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
