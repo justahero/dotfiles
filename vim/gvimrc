@@ -1,5 +1,4 @@
 colorscheme molokai
 
-" Font Manager to list / switch fonts
-Plugin 'takac/vim-fontmanager'
+set list lcs=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 

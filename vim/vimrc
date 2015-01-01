@@ -3,6 +3,7 @@ set t_Co=256
 
 syntax on
 set guifont=Monaco:h14
+colorscheme molokai
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -31,6 +32,11 @@ set matchtime=2        " Highlight matching brackets 0.2 seconds
 set matchpairs+=<:>    " Especially for HTML tags
 
 set ruler
+
+" ====== Tabline / Toolbar options ======
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline#extensions#tabline#enabled = 1
 
 " ====== File specific options ======
 
@@ -93,6 +99,9 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
+" For nice toolbar
+Plugin 'bling/vim-airline'
+
 " Ctrl-P fuzzy file search plugin
 Plugin 'kien/ctrlp.vim'
 
@@ -108,3 +117,14 @@ Plugin 'vim-scripts/a.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" ====== Some key mappings ======
+
+" short cuts for moving line / selection up or down in every mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
