@@ -1,8 +1,11 @@
 set nocompatible       " Make Vim more useful
-set t_Co=256
 
 syntax on
+set background=dark
 set guifont=Monaco:h14
+let g:molokai_original=1
+let g:rehash256=1
+set t_Co=256
 colorscheme molokai
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -28,15 +31,14 @@ set visualbell         " No sounds
 set autoread           " Reload files modified outside vim
 set laststatus=2       " Always show status line
 set showmatch          " Show matching brackets
-set matchtime=2        " Highlight matching brackets 0.2 seconds
+set matchtime=4        " Highlight matching brackets 0.4 seconds
 set matchpairs+=<:>    " Especially for HTML tags
 
-set ruler
+" Airline status bar config
+let g:airline_theme='tomorrow'
+let g:airline#extensions#tabline#enabled = 1
 
-" ====== Tabline / Toolbar options ======
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#enabled = 1
+set ruler
 
 " ====== File specific options ======
 
@@ -99,6 +101,9 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
+" Molokai color scheme
+Plugin 'tomasr/molokai'
+
 " For nice toolbar
 Plugin 'bling/vim-airline'
 
@@ -113,6 +118,15 @@ Plugin 'vim-ruby/vim-ruby'
 
 " C / C++ related plugins
 Plugin 'vim-scripts/a.vim'
+
+" Auto-pairs completes brackets / blocks
+Plugin 'jiangmiao/auto-pairs'
+
+" General Auto Completion for most languages
+Plugin 'ervandew/supertab'
+
+" Some useful Elixir stuff
+Plugin 'elixir-lang/vim-elixir'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
