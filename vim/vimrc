@@ -1,6 +1,47 @@
+" ============================================
+" Vundle stuff
+" ============================================
 set nocompatible       " Make Vim more useful
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+" Molokai color scheme
+Plugin 'tomasr/molokai'
+" Plugin 'nanotech/jellybeans'
+" For nice toolbar
+Plugin 'bling/vim-airline'
+" Ctrl-P fuzzy file search plugin
+Plugin 'kien/ctrlp.vim'
+" Coffeescript syntax highlighting
+Plugin 'kchmck/vim-coffee-script'
+" Install common Ruby Support
+Plugin 'vim-ruby/vim-ruby'
+" C / C++ related plugins
+Plugin 'vim-scripts/a.vim'
+" Auto-pairs completes brackets / blocks
+Plugin 'jiangmiao/auto-pairs'
+" General Auto Completion for most languages
+Plugin 'ervandew/supertab'
+" Some useful Elixir stuff
+Plugin 'elixir-lang/vim-elixir'
+" nelstrom's plugin depends on kana's
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" All plugins need to be added before the following line
+call vundle#end()
+filetype plugin indent on
 
 syntax on
+filetype plugin indent on
+
+" Enable built-in matchit plugin
+runtime macros/matchit.vim
+
+" Set color scheme / theme
 set background=dark
 set guifont=Monaco:h14
 let g:molokai_original=1
@@ -23,7 +64,6 @@ set hidden
 set history=1000
 
 set number             " Show line numbers
-" set relativenumber     " Show relative line numbers
 set cursorline         " Highlight cursor line
 set showcmd            " Show incomplete commands in status bar
 set showmode           " Show current mode in status bar
@@ -33,46 +73,35 @@ set laststatus=2       " Always show status line
 set showmatch          " Show matching brackets
 set matchtime=4        " Highlight matching brackets 0.4 seconds
 set matchpairs+=<:>    " Especially for HTML tags
+set backupdir=~/.tmp   " Do not clutter current folder
+set directory=~/.tmp   " Do not clutter current folder with tmp / swp files
 
 " Airline status bar config
 let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
 
 set ruler
-
-" ====== File specific options ======
-
-filetype on
-filetype plugin on
-filetype indent on
+set hls is
 
 " ====== Indentation ======
-
 set autoindent
 set smartindent
-" set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
 
-
 " ====== Folding ======
-
 set foldmethod=indent    " Fold based on indent
 set foldnestmax=3        " deepest fold level set to 3
 set nofoldenable         " Folding is deactivated by default
 
-
 " ====== Scrolling ======
-
 set scrolloff=5
 set sidescrolloff=15
 set sidescroll=1
 
-
 " ====== Code Completion ======
-
 set wildmode=list:longest
 set wildmenu
 set wildignore=*.o,*.obj
@@ -80,60 +109,20 @@ set wildignore+=*DS_Store*
 set wildignore+=*.gem
 set wildignore+=*.png,*.jpg,*.jpeg,*.gif
 
-
 " ====== Swap / Temp files ======
-
 set noswapfile
 set nobackup
 set nowb
 
-
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 
-
-" ====== Plugins handled by vundle ======
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
-
-" Molokai color scheme
-Plugin 'tomasr/molokai'
-
-" For nice toolbar
-Plugin 'bling/vim-airline'
-
-" Ctrl-P fuzzy file search plugin
-Plugin 'kien/ctrlp.vim'
-
-" Coffeescript syntax highlighting
-Plugin 'kchmck/vim-coffee-script'
-
-" Install common Ruby Support
-Plugin 'vim-ruby/vim-ruby'
-
-" C / C++ related plugins
-Plugin 'vim-scripts/a.vim'
-
-" Auto-pairs completes brackets / blocks
-Plugin 'jiangmiao/auto-pairs'
-
-" General Auto Completion for most languages
-Plugin 'ervandew/supertab'
-
-" Some useful Elixir stuff
-Plugin 'elixir-lang/vim-elixir'
-
+" Control-P plugin related options
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " ====== Some key mappings ======
-
 " short cuts for moving line / selection up or down in every mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -141,4 +130,25 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Emacs / Command line style navigation to start / end of line
+imap <C-e> <C-o>$
+imap <C-a> <C-o>^
+
+" If the current buffer has never been saved, it will have no name,
+" call the file browser to save it, otherwise just save it.
+nnoremap <silent> <C-S> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
+inoremap <C-s> <Esc>:w<CR>
+vnoremap <C-s> <Esc>:w<CR>gv
+
+map <C-h> :nohlsearch <CR>
+" Disable cursor keys to stick to hjkl
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
