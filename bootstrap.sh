@@ -25,3 +25,6 @@ ln -sf `pwd`/vim/gvimrc ~/.gvimrc
 
 # tmux
 ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ln -sf `pwd`/tmux/tmux.conf.osx ~/.tmux.conf.osx
+fi
