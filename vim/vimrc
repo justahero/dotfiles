@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " ============================================
 " Vundle stuff
 " ============================================
@@ -10,6 +13,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Molokai color scheme
 Plugin 'tomasr/molokai'
+" Some useful Elixir stuff
+Plugin 'elixir-lang/vim-elixir'
 " Plugin 'nanotech/jellybeans'
 " For nice toolbar
 Plugin 'bling/vim-airline'
@@ -25,11 +30,16 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'jiangmiao/auto-pairs'
 " General Auto Completion for most languages
 Plugin 'ervandew/supertab'
-" Some useful Elixir stuff
-Plugin 'elixir-lang/vim-elixir'
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+" Search plugin
+Plugin 'rking/ag.vim'
+" for having a tree like folder structure
+Plugin 'scrooloose/nerdtree'
+" Support for Mustache templates
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'godlygeek/tabular'
 
 " All plugins need to be added before the following line
 call vundle#end()
@@ -74,9 +84,18 @@ set matchpairs+=<:>    " Especially for HTML tags
 set backupdir=~/.tmp   " Do not clutter current folder
 set directory=~/.tmp   " Do not clutter current folder with tmp / swp files
 
+set list lcs=trail:·,tab:▸\
+" set listchars=tab:▸\ ,trail:·
+
 " Airline status bar config
 let g:airline_theme='tomorrow'
 let g:airline#extensions#tabline#enabled = 1
+
+" Fuzzy finder - Ctrl-P, ignore stuff that can't be openend or is not text
+let g:fuzzy_ignore="*.png;*.PNG;*.jpg;*.JPG;*.gif;*.GIF;vendor/**;coverage/**;tmp/**;rdoc/**"
+
+" NERDTree options
+let NERDTreeShowHidden = 1
 
 set ruler
 set hls is
@@ -115,6 +134,9 @@ set nowb
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 
+set splitbelow
+set splitright
+
 " Control-P plugin related options
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -122,12 +144,18 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " ====== Some key mappings ======
 " short cuts for moving line / selection up or down in every mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+" noremap <C-j> :m .+1<CR>==
+" noremap <C-k> :m .-2<CR>==
+" noremap <C-j> <Esc>:m .+1<CR>==gi
+" noremap <C-k> <Esc>:m .-2<CR>==gi
+" noremap <C-j> :m '>+1<CR>gv=gv
+" noremap <C-k> :m '<-2<CR>gv=gv
+
+" Mappings for Window navigation
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 " Emacs / Command line style navigation to start / end of line
 imap <C-e> <C-o>$
@@ -139,14 +167,12 @@ nnoremap <silent> <C-S> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>con
 inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>gv
 
-map <C-h> :nohlsearch <CR>
 " Disable cursor keys to stick to hjkl
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
