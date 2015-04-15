@@ -26,6 +26,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 " C / C++ related plugins
 Plugin 'vim-scripts/a.vim'
+" Rust plugin
+Plugin 'rust-lang/rust.vim'
 " Auto-pairs completes brackets / blocks
 Plugin 'jiangmiao/auto-pairs'
 " General Auto Completion for most languages
@@ -43,10 +45,13 @@ Plugin 'godlygeek/tabular'
 
 " All plugins need to be added before the following line
 call vundle#end()
-filetype plugin indent on
 
 syntax on
 filetype plugin indent on
+
+" RS files are detected as Hercules files, fix asscociation
+au BufRead,BufNewFile *.rs set filetype=rust
+
 
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
