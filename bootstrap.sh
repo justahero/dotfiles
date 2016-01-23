@@ -23,6 +23,10 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # macvim
 ln -sf `pwd`/vim/gvimrc ~/.gvimrc
 
+# bin folder
+ln -sf `pwd`/bin/git-churn ~/bin/
+ln -sf `pwd`/bin/git-overwritten ~/bin/
+
 # tmux
 ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
 if [[ "$OSTYPE" == "darwin"* ]]; then
