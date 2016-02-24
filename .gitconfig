@@ -14,6 +14,7 @@
 	du = diff --color
 	co = checkout
 	me = $GIT_AUTHOR_NAME
+	diff-stash = "!f() { git stash show -p stash@{${1-0}}; }; f"
 	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
 	lg-me = !git lg --author=\"$GIT_AUTHOR_NAME\"
 	today-all = !git lg --all --since='12am'
