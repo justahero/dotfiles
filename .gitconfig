@@ -17,6 +17,7 @@
 	diff-stash = "!f() { git stash show -p stash@{${1-0}}; }; f"
 	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
 	lg-me = !git lg --author=\"$GIT_AUTHOR_NAME\"
+	authors = shortlog -esn
 	today-all = !git lg --all --since='12am'
 	lg-day = "!f() { git lg-me --all --after=\"${1-(date \"+%Y-%m-%d\")} 00:00\" --before=\"${1-(date \"+%Y-%m-%d\")} 23:59\"; }; f"
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
