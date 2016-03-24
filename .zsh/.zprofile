@@ -1,0 +1,1 @@
+vim() STTY=-ixon command vim "$@"

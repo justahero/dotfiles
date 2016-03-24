@@ -19,9 +19,14 @@ unset doIt
 
 # vim
 ln -sf `pwd`/vim/vimrc ~/.vimrc
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 # macvim
 ln -sf `pwd`/vim/gvimrc ~/.gvimrc
+
+# zsh
+ln -sf `pwd`/.zsh/.zprofile ~/
 
 # bin folder
 ln -sf `pwd`/bin/git-churn ~/bin/
@@ -30,5 +35,5 @@ ln -sf `pwd`/bin/git-overwritten ~/bin/
 # tmux
 ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    ln -sf `pwd`/tmux/tmux.conf.osx ~/.tmux.conf.osx
+  ln -sf `pwd`/tmux/tmux.conf.osx ~/.tmux.conf.osx
 fi
