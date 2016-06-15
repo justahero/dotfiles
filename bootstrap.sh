@@ -29,6 +29,7 @@ ln -sf `pwd`/vim/gvimrc ~/.gvimrc
 ln -sf `pwd`/.zsh/.zprofile ~/
 
 # bin folder
+ln -sf `pwd`/bin/diff-highlight ~/bin/
 ln -sf `pwd`/bin/git-churn ~/bin/
 ln -sf `pwd`/bin/git-overwritten ~/bin/
 
