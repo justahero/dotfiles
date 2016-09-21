@@ -33,6 +33,9 @@ function git_mode {
   if [[ -e "$repo_path/MERGE_HEAD" ]]; then
     STATUS+=("merge")
   fi
+  if [[ -e "$repo_path/CHERRY_PICK_HEAD" ]] then
+    STATUS+=("cherry-pick")
+  fi
   if [[ -e "$repo_path/rebase" || -e "$repo_path/rebase-apply" || -e "$repo_path/rebase-merge" || -e "$repo_path/../.dotest" ]]; then
     STATUS+=("rebase")
   fi
