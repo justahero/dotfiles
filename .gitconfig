@@ -24,5 +24,6 @@
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
 	undo = !git reset --hard && git clean -df
 	crush=!git checkout -b $(git rev-parse --abbrev-ref HEAD)-temp && git reset $(git merge-base master HEAD) && git add -A && git commit
+	search="!f() { git log -p --all -S \"${1}\"; }; f"
 [color]
 	ui = true
