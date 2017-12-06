@@ -17,6 +17,10 @@ else
 fi
 unset doIt
 
+# git
+ln -sf `pwd`/.git_commit_msg.txt ~/.git_commit_msg.txt
+ln -sf `pwd`/.gitignore_global ~/.gitignore_global
+
 # vim
 ln -sf `pwd`/vim/vimrc ~/.vimrc
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
