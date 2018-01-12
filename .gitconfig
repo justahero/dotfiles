@@ -1,5 +1,7 @@
 [core]
+	# Set default editor for commit message
 	editor = subl --wait
+	# Ignore a list of common files / directories
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [alias]
@@ -24,11 +26,19 @@
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
 	undo = !git reset --hard && git clean -df
 	crush=!git checkout -b $(git rev-parse --abbrev-ref HEAD)-temp && git reset $(git merge-base master HEAD) && git add -A && git commit
+[apply]
+	# Before commiting remove trailing white spaces
+	whitespace = fix
 [commit]
+	# Pick the commit template message
 	template = ~/.git_commit_msg.txt
+	# Display diff in commit message
+	verbose = true
 [color]
 	ui = true
 [diff]
+	# Try to make patches easier to read by applying a shift.
+	indentHeuristic = true
 	compactionHeuristic = true
 [pager]
 	show = diff-highlight | less
@@ -36,3 +46,6 @@
 	diff = diff-highlight | less
 [interactive]
 	diffFilter = diff-highlight
+	singleKey = true
+[rebase]
+	stat = true
