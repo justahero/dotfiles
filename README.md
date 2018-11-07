@@ -30,6 +30,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 Then install the following packages commonly used for different dev environments
 
 * fzf
+* node
 * readline
 * tree
 * pstree
