@@ -29,6 +29,14 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 Then install the following packages commonly used for different dev environments
 
+* fzf
+* readline
+* tree
+* pstree
+* reattach-to-user-namespace (to handle window session with tmux)
+* tmux
+* zsh-syntax-highlighting (it's advised to clone the [repository](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) into the `.oh-my-zsh/plugins` folder.
+
 ```bash
-$ brew install fzf readline tree pstree reattach-to-user-namespace tmux zsh-syntax-highlighting
+$ brew install fzf
 ```
