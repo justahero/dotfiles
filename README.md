@@ -19,6 +19,7 @@ On OSX there are some extra tools that can be useful
 
 * [Karabiner](https://pqrs.org/osx/karabiner/) to map keys, e.g. Escape to Capslock on Macbooks that have a touch bar
 * [iterm2](https://www.iterm2.com/downloads.html)
+* [Docker for OSX](https://docs.docker.com/docker-for-mac/)
 
 To fix some issues with arrow keys in iTerm2 read the following [instructions](https://coderwall.com/p/h6yfda/use-and-to-jump-forwards-backwards-words-in-iterm-2-on-os-x).
 
