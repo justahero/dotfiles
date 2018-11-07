@@ -7,7 +7,10 @@ A collection of used dotfiles
 
 Usually the following packages / tools are useful
 
-* install [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
+* [zsh](https://www.zsh.org/) as the default shell
+* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), a collection of useful tools / plugins for zsh
+* [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
+* [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
 
 
 ## OSX
@@ -27,5 +30,5 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 Then install the following packages commonly used for different dev environments
 
 ```bash
-$ brew install readline tree pstree reattach-to-user-namespace tmux zsh-syntax-highlighting
+$ brew install fzf readline tree pstree reattach-to-user-namespace tmux zsh-syntax-highlighting
 ```
