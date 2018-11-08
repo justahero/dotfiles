@@ -12,6 +12,13 @@ Usually the following packages / tools are useful
 * [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
 
+#### Git
+
+A few tools / executables are useful when using Git
+
+* [diff-highlight](https://github.com/git/git/tree/master/contrib/diff-highlight), displays a nicer diff
+* [commit signing with gpg](https://github.com/drduh/YubiKey-Guide), see also [user documentation](https://help.github.com/articles/signing-commits/) on Github
+
 
 ## OSX
 
