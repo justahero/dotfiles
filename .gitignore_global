@@ -1,4 +1,6 @@
 .DS_store
+.vscode/
+
 *.sublime-project
 *.sublime-workspace
 
