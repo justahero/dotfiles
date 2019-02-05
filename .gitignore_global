@@ -1,5 +1,6 @@
 .DS_store
 .vscode/
+.vagrant/
 
 *.sublime-project
 *.sublime-workspace
@@ -7,3 +8,4 @@
 *.classpath
 *.project
 *.settings/
+.phpintel/
