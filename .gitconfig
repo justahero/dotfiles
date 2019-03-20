@@ -11,6 +11,7 @@
 	ls = branch
 	lsa = branch -a
 	bm = branch --merged
+	bc = "!f() { git branch --contains ${1-HEAD} };f
 	del-bm = "!git branch --merged | grep -v ^* | grep -v ^master$ | xargs -n 1 git branch -d"
 	aa = add --all
 	dc = diff --cached --color
@@ -28,13 +29,13 @@
 	crush=!git checkout -b $(git rev-parse --abbrev-ref HEAD)-temp && git reset $(git merge-base master HEAD) && git add -A && git commit
 	search="!f() { git log -p --all -S \"${1}\"; }; f"
 [apply]
-  # Before commiting remove trailing white spaces
-  whitespace = fix
+	# Before commiting remove trailing white spaces
+	whitespace = fix
 [commit]
-  # Pick the commit template message
-  template = ~/.git_commit_msg.txt
-  # Display diff in commit message
-  verbose = true
+	# Pick the commit template message
+	template = ~/.git_commit_msg.txt
+	# Display diff in commit message
+	verbose = true
 [color]
 	ui = true
 [diff]
