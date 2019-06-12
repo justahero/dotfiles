@@ -11,7 +11,7 @@
 	ls = branch
 	lsa = branch -a
 	bm = branch --merged
-	bc = "!f() { git branch --contains ${1-HEAD} };f
+	bc = "!f() { git branch --contains ${1-HEAD} };f"
 	del-bm = "!git branch --merged | grep -v ^* | grep -v ^master$ | xargs -n 1 git branch -d"
 	aa = add --all
 	dc = diff --cached --color
