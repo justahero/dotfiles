@@ -8,7 +8,7 @@
 	la = "!git config -l | grep alias | cut -c 7-"
 	st = status
 	ci = commit --verbose
-	ls = "!f() { git for-each-ref --color=always --format='%(refname:short) %(if)%(upstream:short)%(then)%(color:yellow)(%(upstream:short))%(color:reset) %(end)' refs/heads; }; f"
+	ls = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(committerdate:short)%(color:rese))' refs/heads; }; f"
 	lsa = branch -a
 	bm = branch --merged
 	bc = "!f() { git branch --contains ${1-HEAD} };f"
