@@ -36,6 +36,8 @@
 	template = ~/.git_commit_msg.txt
 	# Display diff in commit message
 	verbose = true
+[pull]
+	rebase = true
 [color]
 	ui = true
 [diff]
