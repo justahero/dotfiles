@@ -21,6 +21,11 @@ A few tools / executables are useful when using Git
 * [overcommit](https://github.com/brigade/overcommit) manages git commit hooks with Ruby
 
 
+#### Useful Tools
+
+* [kubectx](https://github.com/ahmetb/kubectx) - Tools for Kubernetes
+
+
 ## OSX
 
 On OSX there are some extra tools that can be useful
