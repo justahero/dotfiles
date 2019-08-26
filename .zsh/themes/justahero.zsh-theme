@@ -1,5 +1,5 @@
-ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="$fg[cyan]%{↑%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="$fg[cyan]%{↓%G%}"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{✔%G%}"
 ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
@@ -79,7 +79,7 @@ function git_mode {
 }
 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%})
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}: %{$fg_bold[blue]%}%~%{$reset_color%}$(git_super_status) %{$fg[yellow]%}$(git_mode)%{$reset_color%}
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%~%{$reset_color%}$(git_super_status) %{$fg[yellow]%}$(git_mode)%{$reset_color%}
 %_ $(prompt_char) '
 
 # RPROMPT='[%{$fg[yellow]%}$(prompt_rvm)%{$reset_color%} %{$fg[green]%}%*%{$reset_color%}]'
