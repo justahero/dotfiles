@@ -8,11 +8,14 @@
 	la = "!git config -l | grep alias | cut -c 7-"
 	st = status
 	ci = commit --verbose
-	ls = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(committerdate:short)%(color:rese))' refs/heads; }; f"
-	lsa = branch -a
+	# ls = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(committerdate:short)%(color:rese))' refs/heads; }; f"
+	ls = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(committerdate:short)%(color:reset))' refs/heads; }; f"
+	lsa = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(committername) - %(committerdate:short)%(color:reset))' refs/remotes; }; f"
+	lst = "!f() { git for-each-ref --color=always --format='%(refname:short)%(if)%(upstream:short)%(then) %(color:yellow)(%(upstream:short))%(color:reset)%(end) (%(color:blue)%(creatordate:short) - %(authorname)%(color:reset))' refs/tags; }; f"
 	bm = branch --merged
-	bc = "!f() { git branch --contains ${1-HEAD} };f"
+	bc = "!f() { git branch --contains ${1-HEAD}; }; f"
 	del-bm = "!git branch --merged | grep -v ^* | grep -v ^master$ | xargs -n 1 git branch -d"
+	diffy = diff --word-diff
 	aa = add --all
 	dc = diff --cached --color
 	du = diff --color
@@ -21,9 +24,11 @@
 	diff-stash = "!f() { git stash show -p stash@{${1-0}}; }; f"
 	lg = log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --graph
 	lg-me = !git lg --author=\"$GIT_AUTHOR_NAME\"
+	lg-author = "!f() { git lg --author=\"${1-$GIT_AUTHOR_NAME}\"; }; f"
 	authors = shortlog -esn
 	today-all = !git lg --all --since='12am'
-	lg-day = "!f() { git lg-me --all --after=\"${1-(date \"+%Y-%m-%d\")} 00:00\" --before=\"${1-(date \"+%Y-%m-%d\")} 23:59\"; }; f"
+	lg-me-day = "!f() { git lg-me --all --after=\"${1-(date \"+%Y-%m-%d\")} 00:00\" --before=\"${1-(date \"+%Y-%m-%d\")} 23:59\"; }; f"
+	lg-day = "!f() { git lg --all --after=\"${1-(date \"+%Y-%m-%d\")} 00:00\" --before=\"${1-(date \"+%Y-%m-%d\")} 23:59\"; }; f"
 	log-grep = "!f() { git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' ${1-HEAD..HEAD} | grep ${2-\"Merge pull\"}; }; f"
 	undo = !git reset --hard && git clean -df
 	crush=!git checkout -b $(git rev-parse --abbrev-ref HEAD)-temp && git reset $(git merge-base master HEAD) && git add -A && git commit
@@ -36,6 +41,7 @@
 	template = ~/.git_commit_msg.txt
 	# Display diff in commit message
 	verbose = true
+	gpgsign = true
 [pull]
 	rebase = true
 [color]
@@ -53,3 +59,7 @@
 	singleKey = true
 [rebase]
 	stat = true
+[user]
+	signingkey = BF8E7E4C2FF56D0F
+[gpg]
+	program = gpg
