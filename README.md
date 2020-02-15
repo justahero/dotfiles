@@ -12,6 +12,7 @@ Usually the following packages / tools are useful
   * [zsh-completions](https://github.com/zsh-users/zsh-completions/#oh-my-zsh) plugin
   * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) plugin for colored output
+  * git-prompt, set `ZSH_THEME=justahero` in `.zshrc` (it requires Python to run the script `gitstatus.py` in the plugin)
 * [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
 
