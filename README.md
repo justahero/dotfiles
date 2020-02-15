@@ -14,6 +14,12 @@ Usually the following packages / tools are useful
 * [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
 
+### ZSH plugins
+
+* [zsh-completions](https://github.com/zsh-users/zsh-completions)
+* [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
 #### Git
 
 A few tools / executables are useful when using Git
