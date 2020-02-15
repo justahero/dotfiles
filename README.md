@@ -10,15 +10,10 @@ Usually the following packages / tools are useful
 * [zsh](https://www.zsh.org/) as the default shell
 * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), a collection of useful tools / plugins for zsh
   * [zsh-completions](https://github.com/zsh-users/zsh-completions/#oh-my-zsh) plugin
+  * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) plugin for colored output
 * [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
-
-### ZSH plugins
-
-* [zsh-completions](https://github.com/zsh-users/zsh-completions)
-* [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
-* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 #### Git
 
