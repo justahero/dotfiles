@@ -4,6 +4,7 @@
 
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 
 *.classpath
 *.project
