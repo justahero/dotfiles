@@ -1,3 +1,7 @@
+if [[ -e "/usr/local/share/kube-ps1.sh" ]]; then
+  source "/usr/local/share/kube-ps1.sh"
+fi
+
 ZSH_THEME_GIT_PROMPT_AHEAD="$fg[cyan]%{↑%G%}"
 ZSH_THEME_GIT_PROMPT_BEHIND="$fg[cyan]%{↓%G%}"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[green]%}"
@@ -12,13 +16,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
 function prompt_char {
   if [ $UID -eq 0 ]; then echo "%{$fg[red]%}#%{$reset_color%}"; else echo $; fi
-}
-
-function prompt_rvm {
-    rbv=`rvm-prompt`
-    rbv=${rbv#ruby-}
-    [[ $rbv == *"@"* ]] || rbv="${rbv}@default"
-    echo $rbv
 }
 
 function git_repo_path {
@@ -82,5 +79,4 @@ PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%})
 %{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%~%{$reset_color%}$(git_super_status) %{$fg[yellow]%}$(git_mode)%{$reset_color%}
 %_ $(prompt_char) '
 
-# RPROMPT='[%{$fg[yellow]%}$(prompt_rvm)%{$reset_color%} %{$fg[green]%}%*%{$reset_color%}]'
-RPROMPT='[%{$fg[green]%}%*%{$reset_color%}]'
+RPROMPT='$(kube_ps1)[%{$fg[green]%}%*%{$reset_color%}]'
