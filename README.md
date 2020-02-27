@@ -29,6 +29,7 @@ A few tools / executables are useful when using Git
 #### Useful Tools
 
 * [kubectx](https://github.com/ahmetb/kubectx) - Tools for Kubernetes
+* [kube-ps1](https://github.com/jonmosco/kube-ps1) - extend PROMPT to display kube ctx and namespace
 
 
 ## OSX
