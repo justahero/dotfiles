@@ -4,6 +4,8 @@
 	# Ignore a list of common files / directories
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+[init]
+	defaultBranch = main
 [alias]
 	la = "!git config -l | grep alias | cut -c 7-"
 	st = status
