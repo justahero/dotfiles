@@ -19,8 +19,8 @@
 	del-bm = "!git branch --merged | grep -v ^* | grep -v ^master$ | xargs -n 1 git branch -d"
 	diffy = diff --word-diff
 	aa = add --all
-	dc = diff --cached --color
-	du = diff --color
+	dc = diff --cached --color -w --word-diff=plain
+	du = diff --color -w --word-diff=plain
 	co = checkout
 	me = $GIT_AUTHOR_NAME
 	diff-stash = "!f() { git stash show -p stash@{${1-0}}; }; f"
