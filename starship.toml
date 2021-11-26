@@ -1,0 +1,68 @@
+# Inserts a new blank line between shell prompts
+add_newline = true
+
+# sziebell@justahero:~/dev/ferrous/crates-io/crates-io master|●1
+format = """
+$username@$hostname $directory$git_branch$git_commit$git_status $python$elixir$rust
+[\\$](boldwhite) """
+
+right_format = """
+\\[$time\\]
+"""
+
+[username]
+format = "[$user]($style)"
+style_user = "bold red"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style)"
+ssh_only = false
+style = "bold yellow"
+
+[directory]
+truncation_length = 6
+truncate_to_repo = false
+read_only = ""
+truncation_symbol = "…/"
+
+[docker_context]
+disabled = true
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "bold green"
+
+### All git related configurations
+[git_branch]
+disabled = false
+format = "[$symbol$branch$remote_name]($style)"
+style = "bold green"
+truncation_length = 48
+truncation_symbol = "…"
+
+[git_commit]
+disabled = false
+commit_hash_length = 8
+only_detached = true
+format = " [\\($hash$tag\\)]($style)"
+
+[git_status]
+format = '([$ahead_behind](blue)|[$untracked$conflicted$deleted$renamed$modified$staged]($style))'
+stashed = ""
+conflicted = "[⚡${count}](yellow)"
+modified = "[●${count}](yellow)"
+renamed = "[✎${count}](yellow)]"
+untracked = "[+${count}](yellow)"
+staged = '[\(+$count\)](green)'
+ahead = "[⇡${count}](blue)"
+deleted = "[✘${count}](red)"
+diverged = "[⇕⇡${ahead_count}⇣${behind_count}](blue)"
+behind = "[⇣${count}](blue)"
+up_to_date = "[✓](green)"
+
+[git_metrics]
+disabled = false
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
