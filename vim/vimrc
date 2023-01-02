@@ -17,7 +17,7 @@ Plugin 'tomasr/molokai'
 Plugin 'elixir-lang/vim-elixir'
 " Plugin 'nanotech/jellybeans'
 " For nice toolbar
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Ctrl-P fuzzy file search plugin
 Plugin 'kien/ctrlp.vim'
 " Coffeescript syntax highlighting
