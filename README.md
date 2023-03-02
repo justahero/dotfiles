@@ -15,7 +15,11 @@ Usually the following packages / tools are useful
   * git-prompt, set `ZSH_THEME=justahero` in `.zshrc` (it requires Python to run the script `gitstatus.py` in the plugin)
 * [rbenv](https://github.com/rbenv/rbenv), a Ruby manager
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
-* [starship](https://starship.rs/), a customizable prompt for any shell (written in Rust)
+
+Useful Rust tools
+
+* [starship](https://starship.rs/), a customizable prompt for any shell
+* [delta](https://github.com/dandavison/delta), a syntax highlighter for pager (git diffs)
 
 #### Git
 
