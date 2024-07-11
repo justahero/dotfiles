@@ -3,7 +3,7 @@ add_newline = true
 
 # sziebell@justahero:~/dev/ferrous/crates-io/crates-io master|●1
 format = """
-$username@$hostname $directory$git_branch$git_commit$git_status $git_state$python$elixir$rust
+$username@$hostname $directory$git_branch$git_commit$git_status $git_state$python$elixir$rust$ruby
 [\\$](boldwhite) """
 
 right_format = """
@@ -66,3 +66,6 @@ up_to_date = "[✓](green)"
 disabled = false
 added_style = "bold blue"
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[ruby]
+detect_variables = []
