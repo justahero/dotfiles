@@ -21,14 +21,6 @@ unset doIt
 ln -sf `pwd`/.git_commit_msg.txt ~/.git_commit_msg.txt
 ln -sf `pwd`/.gitignore_global ~/.gitignore_global
 
-# vim
-ln -sf `pwd`/vim/vimrc ~/.vimrc
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-# macvim
-ln -sf `pwd`/vim/gvimrc ~/.gvimrc
-
 # zsh
 ln -sf `pwd`/.zsh/.zprofile ~/
 
@@ -36,9 +28,3 @@ ln -sf `pwd`/.zsh/.zprofile ~/
 ln -sf `pwd`/bin/diff-highlight ~/bin/
 ln -sf `pwd`/bin/git-churn ~/bin/
 ln -sf `pwd`/bin/git-overwritten ~/bin/
-
-# tmux
-ln -sf `pwd`/tmux/tmux.conf ~/.tmux.conf
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  ln -sf `pwd`/tmux/tmux.conf.osx ~/.tmux.conf.osx
-fi
