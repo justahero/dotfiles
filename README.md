@@ -30,6 +30,21 @@ A few tools / executables are useful when using Git
 * [commit signing with gpg](https://github.com/drduh/YubiKey-Guide), see also [user documentation](https://help.github.com/articles/signing-commits/) on Github
 * [tig](https://github.com/jonas/tig) a text mode terminal to inspect git history
 
+#### `vim`
+
+Optionally the `vim` folder contains config for the vim editor. First install [`vundle`](https://github.com/VundleVim/Vundle.vim), a vim plugin manager. Create the `.vim` folder in `$HOME` first.
+
+```shell
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Then copy the `.vimrc` file to the home folder. To install all vim plugins via shell
+
+```
+$ vim +PluginInstall +qall
+```
+
+to install all plugins defined in `.vimrc`.
 
 ## OSX
 
