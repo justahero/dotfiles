@@ -31,6 +31,13 @@ A few tools / executables are useful when using Git
 * [commit signing with gpg](https://github.com/drduh/YubiKey-Guide), see also [user documentation](https://help.github.com/articles/signing-commits/) on Github
 * [tig](https://github.com/jonas/tig) a text mode terminal to inspect git history
 
+Configure git user credentials: 
+
+```shell
+$ git config --global user.name "Sebastian Ziebell"
+$ git config --global user.email "sebastian.ziebell@gmail.com"
+```
+
 #### `vim`
 
 Optionally the `vim` folder contains config for the vim editor. First install [`vundle`](https://github.com/VundleVim/Vundle.vim), a vim plugin manager. Create the `.vim` folder in `$HOME` first.
