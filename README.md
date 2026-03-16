@@ -35,7 +35,7 @@ Configure git user credentials:
 
 ```shell
 $ git config --global user.name "Sebastian Ziebell"
-$ git config --global user.email "sebastian.ziebell@gmail.com"
+$ git config --global user.email "email@example.com"
 ```
 
 #### `vim`
