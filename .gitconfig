@@ -1,9 +1,11 @@
 [core]
 	# Set default editor for commit message
-	editor = subl --wait
+	editor = code --wait
 	# Ignore a list of common files / directories
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+	# Install delta via cargo
+	pager = delta
 [init]
 	defaultBranch = main
 [alias]
@@ -57,11 +59,16 @@
 	log = diff-highlight | less
 	diff = diff-highlight | less
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = delta --color-only
 	singleKey = true
+[delta]
+	navigate = true
 [rebase]
 	stat = true
 [user]
-	signingkey = BF8E7E4C2FF56D0F
+	# signingkey = ...
+	name = Sebastian Ziebell
+	# TODO: replace with email
+	email = email@example.com
 [gpg]
 	program = gpg
