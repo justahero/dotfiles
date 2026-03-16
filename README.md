@@ -13,6 +13,7 @@ Usually the following packages / tools are useful
   * [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) plugin for colored output
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
+* `gpg2` - install via `brew install gpg2`
 
 Useful Rust tools
 
