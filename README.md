@@ -38,6 +38,17 @@ $ git config --global user.name "Sebastian Ziebell"
 $ git config --global user.email "email@example.com"
 ```
 
+Automatically authenticate SSH key (e.g. `github_ed25519`) with Github:
+
+```
+# ~/.ssh/config
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/github_ed25519
+```
+
+
 #### `vim`
 
 Optionally the `vim` folder contains config for the vim editor. First install [`vundle`](https://github.com/VundleVim/Vundle.vim), a vim plugin manager. Create the `.vim` folder in `$HOME` first.
