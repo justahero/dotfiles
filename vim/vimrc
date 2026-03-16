@@ -13,19 +13,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " Molokai color scheme
 Plugin 'tomasr/molokai'
-" Some useful Elixir stuff
-Plugin 'elixir-lang/vim-elixir'
 " Plugin 'nanotech/jellybeans'
 " For nice toolbar
 Plugin 'vim-airline/vim-airline-themes'
 " Ctrl-P fuzzy file search plugin
 Plugin 'kien/ctrlp.vim'
-" Coffeescript syntax highlighting
-Plugin 'kchmck/vim-coffee-script'
 " Install common Ruby Support
 Plugin 'vim-ruby/vim-ruby'
-" C / C++ related plugins
-Plugin 'vim-scripts/a.vim'
 " Rust plugin
 Plugin 'rust-lang/rust.vim'
 " Auto-pairs completes brackets / blocks
