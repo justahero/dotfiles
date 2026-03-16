@@ -14,6 +14,7 @@ Usually the following packages / tools are useful
   * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) plugin for colored output
 * [fzf](https://github.com/junegunn/fzf), a command line fuzzy search, scans command history
 * `gpg2` - install via `brew install gpg2`
+* [shifit](https://github.com/fikovnik/ShiftIt) - windows tile manager, version from 2018, until something better is found
 
 Useful Rust tools
 
@@ -75,6 +76,7 @@ On OSX there are a few additional useful tools:
   - Map function keys F1-f12 on external keyboard
 * [iterm2](https://www.iterm2.com/downloads.html)
   - Fix navigational issues with arrow keys in iTerm2 with the command line, see [instructions](https://apple.stackexchange.com/a/293988).
+* [Source Code Pro font](https://formulae.brew.sh/cask/font-source-code-pro)
 * [Docker for OSX](https://docs.docker.com/docker-for-mac/)
 
 
@@ -90,7 +92,6 @@ Then install the following packages commonly used for different dev environments
 
 * fzf
 * tree
-* pstree
 * zsh-syntax-highlighting (it's advised to clone the [repository](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) into the `.oh-my-zsh/plugins` folder)
 
 ```bash
